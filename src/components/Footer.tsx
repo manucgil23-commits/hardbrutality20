@@ -3,9 +3,9 @@ import logo from "@/assets/logo-hardbrutality.png";
 
 export function Footer() {
   return (
-    <footer className="py-16 bg-background relative overflow-hidden">
+    <footer className="py-16 tactical-bg relative overflow-hidden">
       {/* Background Logo */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.03]">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.03] z-0">
         <img src={logo} alt="" className="w-[80vw] max-w-5xl" />
       </div>
 
@@ -53,9 +53,9 @@ export function Footer() {
 
         {/* Bottom Row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Legal */}
-          <p className="font-mono text-xs text-muted-foreground">
-            © 2024 HARDBRUTALITY. ALL RIGHTS RESERVED.
+          {/* Monospace Code Style */}
+          <p className="font-mono text-sm text-muted-foreground tracking-wider">
+            EST. 2024 ■ MADRID ■ 150+ BPM
           </p>
 
           {/* Tagline */}

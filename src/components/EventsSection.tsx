@@ -50,8 +50,8 @@ export function EventsSection() {
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
   return (
-    <section id="eventos" className="py-24 bg-background relative">
-      <div className="container mx-auto px-4">
+    <section id="eventos" className="py-24 tactical-bg relative">
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Title */}
         <div className="mb-16">
           <h2 className="font-sans font-black text-5xl md:text-7xl lg:text-8xl text-foreground mb-2 tracking-tight">
@@ -100,7 +100,7 @@ export function EventsSection() {
                   <Button variant="outline" size="sm" onClick={() => setExpandedId(expandedId === event.id ? null : event.id)}>
                     + INFO
                   </Button>
-                  <Button variant="brutal" size="sm">
+                  <Button variant="neon" size="sm">
                     COMPRAR ENTRADAS
                   </Button>
                 </div>
