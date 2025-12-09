@@ -54,11 +54,11 @@ export function EventsSection() {
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="mb-16">
-          <h2 className="font-display text-6xl md:text-8xl text-foreground mb-2">
-            UPCOMING
+          <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-foreground mb-2">
+            Upcoming
           </h2>
-          <h2 className="font-display text-6xl md:text-8xl text-laser">
-            RAVES
+          <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-laser">
+            Raves
           </h2>
         </div>
 
@@ -87,7 +87,7 @@ export function EventsSection() {
 
                 {/* Event Info */}
                 <div className="flex-1">
-                  <h3 className="font-display text-2xl md:text-3xl text-foreground mb-2">
+                  <h3 className="font-display text-2xl md:text-3xl text-foreground mb-2 tracking-wider">
                     {event.venue}
                   </h3>
                   <p className="font-mono text-sm text-muted-foreground">

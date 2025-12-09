@@ -1,51 +1,55 @@
 import { useEffect, useState } from "react";
-import heroBg from "@/assets/hero-bg.jpg";
+import logo from "@/assets/logo-hardbrutality.png";
 
 export function HeroSection() {
   const [showSubtitle, setShowSubtitle] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowSubtitle(true), 500);
+    const timer = setTimeout(() => setShowSubtitle(true), 800);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      <div className="absolute inset-0 bg-background/70" />
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%23000'/%3E%3C/svg%3E"
+      >
+        <source
+          src="https://assets.mixkit.co/videos/4755/4755-720.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-background/80" />
       
       {/* Noise Overlay */}
       <div className="absolute inset-0 noise-overlay" />
       
       {/* Scanlines */}
-      <div className="absolute inset-0 scanlines opacity-30" />
+      <div className="absolute inset-0 scanlines opacity-20" />
+
+      {/* Red Gradient Accent */}
+      <div className="absolute inset-0 bg-gradient-to-t from-laser/10 via-transparent to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4">
-        {/* Main Title with Glitch Effect */}
-        <h1 className="font-display text-[12vw] md:text-[10vw] lg:text-[8vw] leading-none tracking-wider text-foreground mb-4 relative">
-          <span className="relative inline-block hover:animate-glitch-skew transition-all">
-            HARD
-            <span className="absolute inset-0 text-laser opacity-0 hover:opacity-100 transition-opacity" style={{ transform: "translate(2px, 2px)" }}>
-              HARD
-            </span>
-          </span>
-          <br />
-          <span className="relative inline-block hover:animate-glitch-skew">
-            BRUTALITY
-            <span className="absolute inset-0 text-laser opacity-0 hover:opacity-100 transition-opacity" style={{ transform: "translate(-2px, -2px)" }}>
-              BRUTALITY
-            </span>
-          </span>
-        </h1>
+      <div className="relative z-10 text-center px-4 flex flex-col items-center">
+        {/* Logo with Glow */}
+        <img
+          src={logo}
+          alt="HardBrutality"
+          className="w-[80vw] md:w-[60vw] lg:w-[50vw] max-w-4xl glow-white mb-8 animate-fade-in"
+        />
 
         {/* Typewriter Subtitle */}
         {showSubtitle && (
-          <p className="font-mono text-lg md:text-xl text-laser inline-block overflow-hidden whitespace-nowrap border-r-2 border-laser animate-typewriter">
+          <p className="font-display text-xl md:text-3xl text-foreground tracking-[0.3em] inline-block overflow-hidden whitespace-nowrap border-r-2 border-laser animate-typewriter">
             VAMOS POR TI MADRID
           </p>
         )}

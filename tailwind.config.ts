@@ -52,7 +52,8 @@ export default {
         "chrome-dark": "hsl(var(--chrome-dark))",
       },
       fontFamily: {
-        display: ["Bebas Neue", "sans-serif"],
+        gothic: ["UnifrakturMaguntia", "cursive"],
+        display: ["Oswald", "sans-serif"],
         mono: ["Space Mono", "monospace"],
       },
       borderRadius: {
@@ -69,10 +70,15 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        marquee: "marquee 20s linear infinite",
       },
     },
   },
