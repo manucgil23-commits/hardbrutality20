@@ -27,11 +27,11 @@ export function MerchSection() {
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="mb-16">
-          <h2 className="font-display text-6xl md:text-8xl text-foreground mb-2">
-            HARD
+          <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-foreground mb-2">
+            Hard
           </h2>
-          <h2 className="font-display text-6xl md:text-8xl text-laser">
-            WEAR
+          <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-laser">
+            Wear
           </h2>
         </div>
 
@@ -53,7 +53,7 @@ export function MerchSection() {
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background to-transparent">
                 <div className="flex items-end justify-between">
                   <div>
-                    <h3 className="font-display text-2xl md:text-3xl text-foreground">
+                    <h3 className="font-display text-2xl md:text-3xl text-foreground tracking-wider">
                       {product.name}
                     </h3>
                     <span className="font-mono text-lg text-laser">{product.price}</span>

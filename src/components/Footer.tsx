@@ -1,19 +1,20 @@
 import { Instagram } from "lucide-react";
+import logo from "@/assets/logo-hardbrutality.png";
 
 export function Footer() {
   return (
     <footer className="py-16 bg-background relative overflow-hidden">
       {/* Background Logo */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[30vw] text-foreground/[0.03] whitespace-nowrap pointer-events-none select-none">
-        HB
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.03]">
+        <img src={logo} alt="" className="w-[60vw] max-w-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Main Footer Content */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
           {/* Logo */}
-          <div className="font-display text-4xl md:text-6xl text-foreground">
-            HARD<span className="text-laser">BRUTALITY</span>
+          <div className="flex items-center">
+            <img src={logo} alt="HardBrutality" className="h-16 md:h-20 glow-white" />
           </div>
 
           {/* Social Links */}

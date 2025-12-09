@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap');
-
 @layer base {
   :root {
     --background: 0 0% 0%;
@@ -43,12 +41,14 @@
     --noise-overlay: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
 
     /* Typography */
-    --font-display: 'Bebas Neue', sans-serif;
+    --font-gothic: 'UnifrakturMaguntia', cursive;
+    --font-display: 'Oswald', sans-serif;
     --font-mono: 'Space Mono', monospace;
 
     /* Shadows */
     --glow-red: 0 0 30px hsl(350 100% 50% / 0.5);
     --glow-red-intense: 0 0 60px hsl(350 100% 50% / 0.8);
+    --glow-white: 0 0 40px hsl(0 0% 100% / 0.3), 0 0 80px hsl(0 0% 100% / 0.2);
   }
 
   .dark {
@@ -68,12 +68,16 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
-    letter-spacing: 0.05em;
+    font-family: var(--font-gothic);
+    letter-spacing: 0.02em;
   }
 }
 
 @layer components {
+  .font-gothic {
+    font-family: var(--font-gothic);
+  }
+
   .font-display {
     font-family: var(--font-display);
   }
@@ -102,8 +106,16 @@
     box-shadow: var(--glow-red-intense);
   }
 
+  .glow-white {
+    filter: drop-shadow(0 0 20px hsl(0 0% 100% / 0.4)) drop-shadow(0 0 40px hsl(0 0% 100% / 0.2));
+  }
+
   .text-glow {
     text-shadow: 0 0 20px hsl(350 100% 50% / 0.8);
+  }
+
+  .text-glow-white {
+    text-shadow: 0 0 20px hsl(0 0% 100% / 0.5), 0 0 40px hsl(0 0% 100% / 0.3);
   }
 
   .noise-overlay {
@@ -235,6 +247,15 @@
     49.01% { opacity: 1; }
   }
 
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
   .animate-glitch {
     animation: glitch 0.3s infinite;
   }
@@ -262,6 +283,10 @@
     animation: flicker 3s infinite;
   }
 
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
   .hover-lift {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
@@ -276,7 +301,8 @@
     transition: filter 0.4s ease;
   }
 
-  .grayscale-hover:hover {
+  .grayscale-hover:hover,
+  .group:hover .grayscale-hover {
     filter: grayscale(0%);
   }
 
