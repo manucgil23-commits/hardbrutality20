@@ -40,24 +40,20 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 flex flex-col items-center">
-        {/* Logo with Glow */}
+        {/* Logo with Glow - Centered */}
         <img
           src={logo}
           alt="HardBrutality"
-          className="w-[80vw] md:w-[60vw] lg:w-[50vw] max-w-4xl glow-white mb-8 animate-fade-in"
+          className="w-[80vw] md:w-[60vw] lg:w-[50vw] max-w-4xl glow-white animate-fade-in"
         />
 
-        {/* Typewriter Subtitle */}
-        {showSubtitle && (
-          <p className="font-display text-xl md:text-3xl text-foreground tracking-[0.3em] inline-block overflow-hidden whitespace-nowrap border-r-2 border-laser animate-typewriter">
-            VAMOS POR TI MADRID
-          </p>
-        )}
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <span className="font-mono text-xs text-muted-foreground tracking-widest">SCROLL</span>
-          <div className="w-[1px] h-16 bg-gradient-to-b from-laser to-transparent animate-pulse" />
+        {/* Typewriter Subtitle - Below center */}
+        <div className="mt-16 md:mt-24">
+          {showSubtitle && (
+            <p className="font-sans font-black text-xl md:text-3xl text-foreground tracking-[0.3em] inline-block overflow-hidden whitespace-nowrap border-r-2 border-laser animate-typewriter">
+              VAMOS POR TI MADRID
+            </p>
+          )}
         </div>
       </div>
     </section>
