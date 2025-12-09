@@ -46,7 +46,7 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="HardBrutality" className="h-10 md:h-12 glow-white" />
+          <img src={logo} alt="HardBrutality" className="h-14 md:h-16 lg:h-20 glow-white" />
         </Link>
 
         {/* Desktop Nav */}
@@ -56,7 +56,7 @@ export function Navigation() {
               <Link
                 key={item.label}
                 to={item.href}
-                className="font-display text-sm tracking-wider text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-laser after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left"
+                className="font-nav text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-laser after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left"
               >
                 {item.label}
               </Link>
@@ -65,7 +65,7 @@ export function Navigation() {
                 key={item.label}
                 href={item.href}
                 onClick={() => handleNavClick(item.href)}
-                className="font-display text-sm tracking-wider text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-laser after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left"
+                className="font-nav text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-laser after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left"
               >
                 {item.label}
               </a>
@@ -93,7 +93,7 @@ export function Navigation() {
                 <Link
                   key={item.label}
                   to={item.href}
-                  className="font-display text-lg tracking-wider text-foreground hover:text-laser transition-colors py-2 border-b border-border"
+                  className="font-nav text-lg text-foreground hover:text-laser transition-colors py-2 border-b border-border"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -102,7 +102,7 @@ export function Navigation() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="font-display text-lg tracking-wider text-foreground hover:text-laser transition-colors py-2 border-b border-border"
+                  className="font-nav text-lg text-foreground hover:text-laser transition-colors py-2 border-b border-border"
                   onClick={() => handleNavClick(item.href)}
                 >
                   {item.label}

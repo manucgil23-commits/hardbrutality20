@@ -16,11 +16,11 @@ export function GallerySection() {
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="mb-16 text-center">
-          <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-foreground mb-2">
-            The
+          <h2 className="font-sans font-black text-5xl md:text-7xl lg:text-8xl text-foreground mb-2 tracking-tight">
+            THE
           </h2>
-          <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-laser">
-            Experience
+          <h2 className="font-sans font-black text-5xl md:text-7xl lg:text-8xl text-laser tracking-tight">
+            EXPERIENCE
           </h2>
         </div>
 

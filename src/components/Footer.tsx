@@ -6,15 +6,15 @@ export function Footer() {
     <footer className="py-16 bg-background relative overflow-hidden">
       {/* Background Logo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.03]">
-        <img src={logo} alt="" className="w-[60vw] max-w-3xl" />
+        <img src={logo} alt="" className="w-[80vw] max-w-5xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Main Footer Content */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
-          {/* Logo */}
+          {/* Logo - Larger */}
           <div className="flex items-center">
-            <img src={logo} alt="HardBrutality" className="h-16 md:h-20 glow-white" />
+            <img src={logo} alt="HardBrutality" className="h-20 md:h-28 lg:h-32 glow-white" />
           </div>
 
           {/* Social Links */}
