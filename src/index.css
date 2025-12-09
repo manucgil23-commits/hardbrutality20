@@ -4,7 +4,8 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
+    --background: 0 0% 2%;
+    --background-body: 0 0% 2%;
     --foreground: 0 0% 100%;
 
     --card: 0 0% 5%;
@@ -39,6 +40,7 @@
     --chrome: 0 0% 75%;
     --chrome-dark: 0 0% 40%;
     --noise-overlay: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+    --grid-overlay: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none' stroke='%23222' stroke-width='0.5'/%3E%3C/svg%3E");
 
     /* Typography */
     --font-sans: 'Inter', sans-serif;
@@ -48,10 +50,12 @@
     --glow-red: 0 0 30px hsl(350 100% 50% / 0.5);
     --glow-red-intense: 0 0 60px hsl(350 100% 50% / 0.8);
     --glow-white: 0 0 40px hsl(0 0% 100% / 0.3), 0 0 80px hsl(0 0% 100% / 0.2);
+    --neon-glow: 0 0 10px hsl(350 100% 50%), 0 0 20px hsl(350 100% 50%), 0 0 40px hsl(350 100% 50%), 0 0 80px hsl(350 100% 50% / 0.5);
   }
 
   .dark {
-    --background: 0 0% 0%;
+    --background: 0 0% 2%;
+    --background-body: 0 0% 2%;
     --foreground: 0 0% 100%;
   }
 }
@@ -118,6 +122,52 @@
 
   .text-glow-white {
     text-shadow: 0 0 20px hsl(0 0% 100% / 0.5), 0 0 40px hsl(0 0% 100% / 0.3);
+  }
+
+  .text-neon {
+    color: hsl(var(--laser-red));
+    text-shadow: var(--neon-glow);
+  }
+
+  .btn-neon {
+    box-shadow: 0 0 15px hsl(350 100% 50% / 0.6), 0 0 30px hsl(350 100% 50% / 0.4);
+  }
+
+  /* Tactical background with noise and grid */
+  .tactical-bg {
+    position: relative;
+    background-color: hsl(var(--background-body));
+  }
+
+  .tactical-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--noise-overlay);
+    opacity: 0.04;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  .tactical-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--grid-overlay);
+    background-repeat: repeat;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 2px hsl(0 0% 100%);
+    color: transparent;
+  }
+
+  @media (min-width: 768px) {
+    .text-outline {
+      -webkit-text-stroke: 3px hsl(0 0% 100%);
+    }
   }
 
   .noise-overlay {

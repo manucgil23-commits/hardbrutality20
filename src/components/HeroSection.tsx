@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/logo-hardbrutality.png";
 
 export function HeroSection() {
   const [showSubtitle, setShowSubtitle] = useState(false);
@@ -27,30 +26,26 @@ export function HeroSection() {
       </video>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-background/80" />
-      
-      {/* Noise Overlay */}
-      <div className="absolute inset-0 noise-overlay" />
-      
-      {/* Scanlines */}
-      <div className="absolute inset-0 scanlines opacity-20" />
-
-      {/* Red Gradient Accent */}
-      <div className="absolute inset-0 bg-gradient-to-t from-laser/10 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-background/70" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 flex flex-col items-center">
-        {/* Logo with Glow - Centered */}
-        <img
-          src={logo}
-          alt="HardBrutality"
-          className="w-[80vw] md:w-[60vw] lg:w-[50vw] max-w-4xl glow-white animate-fade-in"
-        />
+        {/* Typographic Composition */}
+        <div className="flex flex-col items-center animate-fade-in">
+          {/* HARD - Solid White */}
+          <h1 className="font-sans font-black text-[18vw] md:text-[14vw] lg:text-[12vw] leading-[0.85] text-foreground tracking-tighter">
+            HARD
+          </h1>
+          {/* BRUTALITY - Outline Style */}
+          <h1 className="font-sans font-black text-[18vw] md:text-[14vw] lg:text-[12vw] leading-[0.85] text-outline tracking-tighter -mt-2 md:-mt-4">
+            BRUTALITY
+          </h1>
+        </div>
 
-        {/* Typewriter Subtitle - Below center */}
-        <div className="mt-16 md:mt-24">
+        {/* Neon Subtitle */}
+        <div className="mt-8 md:mt-12">
           {showSubtitle && (
-            <p className="font-sans font-black text-xl md:text-3xl text-foreground tracking-[0.3em] inline-block overflow-hidden whitespace-nowrap border-r-2 border-laser animate-typewriter">
+            <p className="font-sans font-black text-xl md:text-3xl lg:text-4xl text-neon tracking-[0.2em] animate-fade-in">
               VAMOS POR TI MADRID
             </p>
           )}

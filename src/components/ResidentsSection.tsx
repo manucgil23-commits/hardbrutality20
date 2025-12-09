@@ -60,7 +60,7 @@ export function ResidentsSection() {
 
   return (
     <>
-      <section id="residentes" className="py-24 bg-secondary/10 relative overflow-hidden">
+      <section id="residentes" className="py-24 tactical-bg relative overflow-hidden">
         {/* Background Text */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-sans font-black text-[15vw] text-foreground/[0.02] whitespace-nowrap pointer-events-none">
           THE CORE
