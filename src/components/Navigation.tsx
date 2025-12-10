@@ -44,7 +44,7 @@ export function Navigation() {
         isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 h-14 flex items-center justify-between">
+      <div className="container mx-auto px-4 h-18 py-2 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img src={logo} alt="HardBrutality" className="h-32 md:h-40 glow-white absolute -top-6 left-4" />
         </Link>
