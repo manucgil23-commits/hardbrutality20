@@ -47,9 +47,9 @@ export function HeroSection() {
           className="w-[80vw] md:w-[60vw] lg:w-[50vw] max-w-4xl glow-white mb-8 animate-fade-in"
         />
 
-        {/* Neon Glitch Subtitle */}
+        {/* Red Glitch Subtitle */}
         {showSubtitle && (
-          <p className="font-display text-xl md:text-3xl text-foreground tracking-[0.3em] neon-glitch">
+          <p className="font-display text-xl md:text-3xl tracking-[0.3em] red-glitch">
             VAMOS POR TI MADRID
           </p>
         )}

@@ -87,40 +87,44 @@
     font-family: var(--font-mono);
   }
 
-  /* Neon Glitch Effect */
-  .neon-glitch {
+  /* Red Glitch Effect */
+  .red-glitch {
     position: relative;
-    text-shadow: 
-      0 0 5px hsl(330 100% 50%),
-      0 0 10px hsl(330 100% 50%),
-      0 0 20px hsl(330 100% 50%),
-      0 0 40px hsl(350 100% 50%),
-      0 0 80px hsl(350 100% 50%);
-    animation: neon-flicker 3s infinite alternate, glitch-distort 0.5s infinite;
+    color: hsl(var(--laser-red));
+    animation: glitch-static 0.3s infinite;
   }
 
-  .neon-glitch::before,
-  .neon-glitch::after {
+  .red-glitch::before,
+  .red-glitch::after {
     content: 'VAMOS POR TI MADRID';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background: transparent;
   }
 
-  .neon-glitch::before {
-    color: hsl(180 100% 50%);
+  .red-glitch::before {
+    color: hsl(0 100% 50%);
     animation: glitch-clip 2s infinite linear alternate-reverse;
     clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
-    transform: translateX(-2px);
+    transform: translateX(-3px);
   }
 
-  .neon-glitch::after {
-    color: hsl(350 100% 50%);
+  .red-glitch::after {
+    color: hsl(350 100% 60%);
     animation: glitch-clip-2 2s infinite linear alternate-reverse;
     clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
-    transform: translateX(2px);
+    transform: translateX(3px);
+  }
+
+  @keyframes glitch-static {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 1px); }
+    40% { transform: translate(2px, -1px); }
+    60% { transform: translate(-1px, -1px); }
+    80% { transform: translate(1px, 1px); }
   }
 
   .text-laser {
