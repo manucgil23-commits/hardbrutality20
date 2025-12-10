@@ -52,7 +52,8 @@ export default {
         "chrome-dark": "hsl(var(--chrome-dark))",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        gothic: ["UnifrakturMaguntia", "cursive"],
+        display: ["Oswald", "sans-serif"],
         mono: ["Space Mono", "monospace"],
       },
       borderRadius: {

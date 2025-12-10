@@ -5,12 +5,12 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-mono text-sm uppercase tracking-wider transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded-none",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-mono text-sm uppercase tracking-wider transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_15px_hsl(350_100%_50%/0.6),0_0_30px_hsl(350_100%_50%/0.4)] hover:shadow-[0_0_20px_hsl(350_100%_50%/0.8),0_0_40px_hsl(350_100%_50%/0.5)]",
+          "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_30px_hsl(350_100%_50%/0.5)]",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
@@ -23,8 +23,6 @@ const buttonVariants = cva(
           "bg-primary text-primary-foreground border-2 border-foreground shadow-[4px_4px_0_hsl(0_0%_100%)] hover:shadow-[8px_8px_0_hsl(350_100%_50%)] hover:translate-x-[-4px] hover:translate-y-[-4px] active:shadow-none active:translate-x-0 active:translate-y-0",
         chrome:
           "bg-gradient-to-b from-chrome to-chrome-dark text-background border border-chrome hover:from-foreground hover:to-chrome",
-        neon:
-          "bg-primary text-primary-foreground shadow-[0_0_15px_hsl(350_100%_50%/0.6),0_0_30px_hsl(350_100%_50%/0.4),0_0_45px_hsl(350_100%_50%/0.2)] hover:shadow-[0_0_20px_hsl(350_100%_50%/0.8),0_0_40px_hsl(350_100%_50%/0.6),0_0_60px_hsl(350_100%_50%/0.3)]",
       },
       size: {
         default: "h-12 px-6 py-3",

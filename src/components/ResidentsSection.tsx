@@ -60,20 +60,20 @@ export function ResidentsSection() {
 
   return (
     <>
-      <section id="residentes" className="py-24 tactical-bg relative overflow-hidden">
+      <section id="residentes" className="py-24 bg-secondary/10 relative overflow-hidden">
         {/* Background Text */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-sans font-black text-[15vw] text-foreground/[0.02] whitespace-nowrap pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-gothic text-[15vw] text-foreground/[0.02] whitespace-nowrap pointer-events-none">
           THE CORE
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           {/* Section Title */}
           <div className="mb-16 text-center">
-            <h2 className="font-sans font-black text-5xl md:text-7xl lg:text-8xl text-foreground mb-2 tracking-tight">
-              RESIDENT
+            <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-foreground mb-2">
+              Resident
             </h2>
-            <h2 className="font-sans font-black text-5xl md:text-7xl lg:text-8xl text-laser tracking-tight">
-              DJS
+            <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-laser">
+              DJs
             </h2>
           </div>
 
@@ -107,7 +107,7 @@ export function ResidentsSection() {
                   </span>
 
                   {/* Name */}
-                  <h3 className="font-sans font-black text-2xl md:text-3xl lg:text-4xl text-foreground mb-2 group-hover:text-glow transition-all tracking-tight">
+                  <h3 className="font-gothic text-2xl md:text-3xl lg:text-4xl text-foreground mb-2 group-hover:text-glow transition-all">
                     {dj.name}
                   </h3>
 
@@ -138,38 +138,24 @@ export function ResidentsSection() {
         </div>
       </section>
 
-      {/* DJ Modal with Video Background */}
+      {/* DJ Modal */}
       {selectedDJ && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
           onClick={() => setSelectedDJ(null)}
         >
-          {/* Video Background */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source
-              src="https://assets.mixkit.co/videos/4755/4755-720.mp4"
-              type="video/mp4"
-            />
-          </video>
-
-          {/* Dark Blurred Overlay */}
-          <div className="absolute inset-0 bg-background/85 backdrop-blur-md" />
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-background/95 backdrop-blur-md" />
 
           {/* Modal Content */}
           <div
-            className="relative w-full max-w-4xl bg-card/90 border border-border animate-slide-up backdrop-blur-sm"
+            className="relative w-full max-w-4xl bg-card border border-border animate-slide-up"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={() => setSelectedDJ(null)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center border border-border hover:border-laser hover:text-laser transition-colors bg-background/50"
+              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center border border-border hover:border-laser hover:text-laser transition-colors"
             >
               <X size={20} />
             </button>
@@ -182,8 +168,8 @@ export function ResidentsSection() {
                   alt={selectedDJ.name}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-card/90 md:block hidden" />
-                <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-transparent to-transparent md:hidden" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-card md:block hidden" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent md:hidden" />
               </div>
 
               {/* Info */}
@@ -192,7 +178,7 @@ export function ResidentsSection() {
                   {selectedDJ.role}
                 </span>
 
-                <h2 className="font-sans font-black text-4xl md:text-5xl lg:text-6xl text-foreground mb-4 tracking-tight">
+                <h2 className="font-gothic text-4xl md:text-5xl lg:text-6xl text-foreground mb-4">
                   {selectedDJ.name}
                 </h2>
 

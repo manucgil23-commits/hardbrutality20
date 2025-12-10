@@ -23,15 +23,15 @@ const products: Product[] = [
 
 export function MerchSection() {
   return (
-    <section id="merch" className="py-24 tactical-bg relative">
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="merch" className="py-24 bg-background relative">
+      <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="mb-16">
-          <h2 className="font-sans font-black text-5xl md:text-7xl lg:text-8xl text-foreground mb-2 tracking-tight">
-            HARD
+          <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-foreground mb-2">
+            Hard
           </h2>
-          <h2 className="font-sans font-black text-5xl md:text-7xl lg:text-8xl text-laser tracking-tight">
-            WEAR
+          <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-laser">
+            Wear
           </h2>
         </div>
 
@@ -74,7 +74,7 @@ export function MerchSection() {
 
         {/* CTA */}
         <div className="text-center">
-          <Button variant="neon" size="xl">
+          <Button variant="brutal" size="xl">
             IR A LA TIENDA COMPLETA
           </Button>
         </div>

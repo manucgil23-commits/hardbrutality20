@@ -3,18 +3,18 @@ import logo from "@/assets/logo-hardbrutality.png";
 
 export function Footer() {
   return (
-    <footer className="py-16 tactical-bg relative overflow-hidden">
+    <footer className="py-16 bg-background relative overflow-hidden">
       {/* Background Logo */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.03] z-0">
-        <img src={logo} alt="" className="w-[80vw] max-w-5xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.03]">
+        <img src={logo} alt="" className="w-[60vw] max-w-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Main Footer Content */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
-          {/* Logo - Larger */}
+          {/* Logo */}
           <div className="flex items-center">
-            <img src={logo} alt="HardBrutality" className="h-20 md:h-28 lg:h-32 glow-white" />
+            <img src={logo} alt="HardBrutality" className="h-16 md:h-20 glow-white" />
           </div>
 
           {/* Social Links */}
@@ -53,9 +53,9 @@ export function Footer() {
 
         {/* Bottom Row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Monospace Code Style */}
-          <p className="font-mono text-sm text-muted-foreground tracking-wider">
-            EST. 2024 ■ MADRID ■ 150+ BPM
+          {/* Legal */}
+          <p className="font-mono text-xs text-muted-foreground">
+            © 2024 HARDBRUTALITY. ALL RIGHTS RESERVED.
           </p>
 
           {/* Tagline */}
