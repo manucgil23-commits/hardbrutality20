@@ -247,110 +247,135 @@
     49.01% { opacity: 1; }
   }
 
-  /* Neon Glitch Animation - Intense effect */
-  @keyframes neon-glitch {
-    0% {
+  /* Broken Neon Sign Animation - Flickers before turning on */
+  @keyframes neon-flicker {
+    0%, 2% {
       opacity: 0;
-      transform: skewX(-20deg) translateX(-10px);
-      text-shadow: 
-        -3px 0 hsl(0 100% 50%),
-        3px 0 hsl(200 100% 50%),
-        0 0 10px hsl(350 100% 50%);
-      clip-path: inset(0 100% 0 0);
+      text-shadow: none;
     }
-    5% {
+    3%, 4% {
       opacity: 1;
-      clip-path: inset(0 80% 0 0);
-    }
-    10% {
-      opacity: 0.3;
-      transform: skewX(10deg) translateX(5px);
-      text-shadow: 
-        5px 0 hsl(0 100% 50%),
-        -5px 0 hsl(200 100% 50%),
-        0 0 20px hsl(350 100% 50%);
-      clip-path: inset(0 60% 0 0);
-    }
-    15% {
-      opacity: 1;
-      transform: skewX(-5deg) translateX(-3px);
-      clip-path: inset(0 40% 0 0);
-    }
-    20% {
-      opacity: 0;
-      transform: skewX(15deg);
-    }
-    25% {
-      opacity: 1;
-      transform: skewX(-8deg) translateX(2px);
-      text-shadow: 
-        -4px 0 hsl(0 100% 50%),
-        4px 0 hsl(200 100% 50%),
-        0 0 30px hsl(350 100% 50%);
-      clip-path: inset(0 20% 0 0);
-    }
-    30% {
-      opacity: 0.5;
-      transform: skewX(5deg);
-    }
-    35% {
-      opacity: 1;
-      transform: skewX(-3deg);
-      clip-path: inset(0 10% 0 0);
-    }
-    40% {
-      opacity: 0;
-      transform: skewX(0deg) translateX(-5px);
-    }
-    45% {
-      opacity: 1;
-      transform: skewX(2deg);
-      clip-path: inset(0 5% 0 0);
-    }
-    50% {
-      opacity: 0.8;
-      transform: skewX(-1deg);
-      text-shadow: 
-        2px 0 hsl(0 100% 50%),
-        -2px 0 hsl(200 100% 50%),
-        0 0 15px hsl(350 100% 50%);
-    }
-    55% {
-      opacity: 1;
-      clip-path: inset(0 0 0 0);
-    }
-    60% {
-      opacity: 0.9;
-      transform: skewX(0.5deg);
-    }
-    65% {
-      opacity: 1;
-      transform: skewX(0deg);
-      text-shadow: 
-        1px 0 hsl(0 100% 50%),
-        -1px 0 hsl(200 100% 50%),
-        0 0 10px hsl(350 100% 50%);
-    }
-    70% {
-      opacity: 0.95;
-    }
-    75%, 100% {
-      opacity: 1;
-      transform: skewX(0deg) translateX(0);
       text-shadow: 
         0 0 10px hsl(350 100% 50%),
-        0 0 20px hsl(350 100% 50% / 0.5),
-        0 0 40px hsl(350 100% 50% / 0.3);
-      clip-path: inset(0 0 0 0);
+        0 0 20px hsl(350 100% 50% / 0.8),
+        0 0 40px hsl(350 100% 50% / 0.5);
+    }
+    5%, 15% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    16%, 17% {
+      opacity: 0.8;
+      text-shadow: 
+        0 0 5px hsl(350 100% 50%),
+        0 0 10px hsl(350 100% 50% / 0.5);
+    }
+    18%, 22% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    23%, 24% {
+      opacity: 1;
+      text-shadow: 
+        0 0 10px hsl(350 100% 50%),
+        0 0 20px hsl(350 100% 50% / 0.8),
+        0 0 40px hsl(350 100% 50% / 0.5);
+    }
+    25%, 26% {
+      opacity: 0.3;
+      text-shadow: 
+        0 0 3px hsl(350 100% 50%);
+    }
+    27%, 28% {
+      opacity: 1;
+      text-shadow: 
+        0 0 10px hsl(350 100% 50%),
+        0 0 20px hsl(350 100% 50% / 0.8);
+    }
+    29%, 35% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    36%, 37% {
+      opacity: 0.6;
+      text-shadow: 
+        0 0 8px hsl(350 100% 50%);
+    }
+    38%, 39% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    40%, 41% {
+      opacity: 1;
+      text-shadow: 
+        0 0 10px hsl(350 100% 50%),
+        0 0 20px hsl(350 100% 50% / 0.8),
+        0 0 40px hsl(350 100% 50% / 0.5);
+    }
+    42%, 44% {
+      opacity: 0.2;
+      text-shadow: none;
+    }
+    45%, 46% {
+      opacity: 0.9;
+      text-shadow: 
+        0 0 10px hsl(350 100% 50%),
+        0 0 15px hsl(350 100% 50% / 0.6);
+    }
+    47%, 52% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    53%, 54% {
+      opacity: 1;
+      text-shadow: 
+        0 0 10px hsl(350 100% 50%),
+        0 0 20px hsl(350 100% 50% / 0.8),
+        0 0 40px hsl(350 100% 50% / 0.5);
+    }
+    55%, 56% {
+      opacity: 0.4;
+      text-shadow: 
+        0 0 5px hsl(350 100% 50%);
+    }
+    57%, 58% {
+      opacity: 1;
+      text-shadow: 
+        0 0 10px hsl(350 100% 50%),
+        0 0 20px hsl(350 100% 50% / 0.8);
+    }
+    59%, 60% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    61%, 62% {
+      opacity: 0.7;
+      text-shadow: 
+        0 0 8px hsl(350 100% 50%);
+    }
+    63%, 64% {
+      opacity: 1;
+      text-shadow: 
+        0 0 10px hsl(350 100% 50%),
+        0 0 20px hsl(350 100% 50% / 0.8),
+        0 0 40px hsl(350 100% 50% / 0.5);
+    }
+    65%, 66% {
+      opacity: 0.5;
+    }
+    67%, 100% {
+      opacity: 1;
+      text-shadow: 
+        0 0 10px hsl(350 100% 50%),
+        0 0 20px hsl(350 100% 50% / 0.8),
+        0 0 40px hsl(350 100% 50% / 0.5),
+        0 0 60px hsl(350 100% 50% / 0.3);
     }
   }
 
   .neon-glitch-text {
-    animation: neon-glitch 2s ease-out forwards;
-    text-shadow: 
-      0 0 10px hsl(350 100% 50%),
-      0 0 20px hsl(350 100% 50% / 0.5),
-      0 0 40px hsl(350 100% 50% / 0.3);
+    animation: neon-flicker 3s ease-out forwards;
+    color: hsl(var(--foreground));
   }
 
   @keyframes marquee {
