@@ -247,6 +247,112 @@
     49.01% { opacity: 1; }
   }
 
+  /* Neon Glitch Animation - Intense effect */
+  @keyframes neon-glitch {
+    0% {
+      opacity: 0;
+      transform: skewX(-20deg) translateX(-10px);
+      text-shadow: 
+        -3px 0 hsl(0 100% 50%),
+        3px 0 hsl(200 100% 50%),
+        0 0 10px hsl(350 100% 50%);
+      clip-path: inset(0 100% 0 0);
+    }
+    5% {
+      opacity: 1;
+      clip-path: inset(0 80% 0 0);
+    }
+    10% {
+      opacity: 0.3;
+      transform: skewX(10deg) translateX(5px);
+      text-shadow: 
+        5px 0 hsl(0 100% 50%),
+        -5px 0 hsl(200 100% 50%),
+        0 0 20px hsl(350 100% 50%);
+      clip-path: inset(0 60% 0 0);
+    }
+    15% {
+      opacity: 1;
+      transform: skewX(-5deg) translateX(-3px);
+      clip-path: inset(0 40% 0 0);
+    }
+    20% {
+      opacity: 0;
+      transform: skewX(15deg);
+    }
+    25% {
+      opacity: 1;
+      transform: skewX(-8deg) translateX(2px);
+      text-shadow: 
+        -4px 0 hsl(0 100% 50%),
+        4px 0 hsl(200 100% 50%),
+        0 0 30px hsl(350 100% 50%);
+      clip-path: inset(0 20% 0 0);
+    }
+    30% {
+      opacity: 0.5;
+      transform: skewX(5deg);
+    }
+    35% {
+      opacity: 1;
+      transform: skewX(-3deg);
+      clip-path: inset(0 10% 0 0);
+    }
+    40% {
+      opacity: 0;
+      transform: skewX(0deg) translateX(-5px);
+    }
+    45% {
+      opacity: 1;
+      transform: skewX(2deg);
+      clip-path: inset(0 5% 0 0);
+    }
+    50% {
+      opacity: 0.8;
+      transform: skewX(-1deg);
+      text-shadow: 
+        2px 0 hsl(0 100% 50%),
+        -2px 0 hsl(200 100% 50%),
+        0 0 15px hsl(350 100% 50%);
+    }
+    55% {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+    }
+    60% {
+      opacity: 0.9;
+      transform: skewX(0.5deg);
+    }
+    65% {
+      opacity: 1;
+      transform: skewX(0deg);
+      text-shadow: 
+        1px 0 hsl(0 100% 50%),
+        -1px 0 hsl(200 100% 50%),
+        0 0 10px hsl(350 100% 50%);
+    }
+    70% {
+      opacity: 0.95;
+    }
+    75%, 100% {
+      opacity: 1;
+      transform: skewX(0deg) translateX(0);
+      text-shadow: 
+        0 0 10px hsl(350 100% 50%),
+        0 0 20px hsl(350 100% 50% / 0.5),
+        0 0 40px hsl(350 100% 50% / 0.3);
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  .neon-glitch-text {
+    animation: neon-glitch 2s ease-out forwards;
+    text-shadow: 
+      0 0 10px hsl(350 100% 50%),
+      0 0 20px hsl(350 100% 50% / 0.5),
+      0 0 40px hsl(350 100% 50% / 0.3);
+  }
+
   @keyframes marquee {
     0% {
       transform: translateX(0);
