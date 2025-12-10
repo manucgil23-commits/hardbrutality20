@@ -47,18 +47,12 @@ export function HeroSection() {
           className="w-[80vw] md:w-[60vw] lg:w-[50vw] max-w-4xl glow-white mb-8 animate-fade-in"
         />
 
-        {/* Typewriter Subtitle */}
+        {/* Neon Glitch Subtitle */}
         {showSubtitle && (
-          <p className="font-display text-xl md:text-3xl text-foreground tracking-[0.3em] inline-block overflow-hidden whitespace-nowrap border-r-2 border-laser animate-typewriter">
+          <p className="font-display text-xl md:text-3xl text-foreground tracking-[0.3em] neon-glitch">
             VAMOS POR TI MADRID
           </p>
         )}
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <span className="font-mono text-xs text-muted-foreground tracking-widest">SCROLL</span>
-          <div className="w-[1px] h-16 bg-gradient-to-b from-laser to-transparent animate-pulse" />
-        </div>
       </div>
     </section>
   );
