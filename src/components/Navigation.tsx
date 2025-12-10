@@ -46,7 +46,7 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="HardBrutality" className="h-24 md:h-32 glow-white absolute top-2 left-4" />
+          <img src={logo} alt="HardBrutality" className="h-32 md:h-40 glow-white absolute -top-2 left-4" />
         </Link>
 
         {/* Desktop Nav */}
