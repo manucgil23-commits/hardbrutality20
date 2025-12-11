@@ -144,8 +144,19 @@ export function ResidentsSection() {
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
           onClick={() => setSelectedDJ(null)}
         >
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-background/95 backdrop-blur-md" />
+          {/* Video Background */}
+          <div className="absolute inset-0">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/videos/hero-bg.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-background/85 backdrop-blur-sm" />
+          </div>
 
           {/* Modal Content */}
           <div
