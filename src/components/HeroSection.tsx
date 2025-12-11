@@ -21,7 +21,7 @@ export function HeroSection() {
         poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%23000'/%3E%3C/svg%3E"
       >
         <source
-          src="https://assets.mixkit.co/videos/4755/4755-720.mp4"
+          src="/videos/hero-bg.mp4"
           type="video/mp4"
         />
       </video>
@@ -50,7 +50,7 @@ export function HeroSection() {
           
           {/* Neon Glitch Subtitle - positioned inside the logo area */}
           {showSubtitle && (
-            <div className="absolute bottom-16 md:bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+            <div className="absolute bottom-24 md:bottom-32 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
               <p className="font-display text-lg md:text-2xl lg:text-3xl text-foreground tracking-[0.3em] neon-glitch-text whitespace-nowrap">
                 VAMOS POR TI MADRID
               </p>
