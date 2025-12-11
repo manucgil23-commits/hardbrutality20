@@ -49,9 +49,25 @@ export function HeroSection() {
 
         {/* Neon Glitch Subtitle */}
         {showSubtitle && (
-          <p className="font-display text-xl md:text-3xl text-foreground tracking-[0.3em] neon-glitch-text">
-            VAMOS POR TI MADRID
-          </p>
+          <div className="flex flex-col items-center gap-6 mt-4">
+            <p className="font-display text-xl md:text-3xl text-foreground tracking-[0.3em] neon-glitch-text">
+              VAMOS POR TI MADRID
+            </p>
+            
+            {/* Madrid Stars (7 stars representing Osa Mayor) */}
+            <div className="flex items-center gap-2 opacity-80">
+              {[...Array(7)].map((_, i) => (
+                <svg
+                  key={i}
+                  className="w-4 h-4 md:w-5 md:h-5 text-foreground"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+                </svg>
+              ))}
+            </div>
+          </div>
         )}
       </div>
     </section>
