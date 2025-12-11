@@ -14,7 +14,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
           {/* Logo */}
           <div className="flex items-center">
-            <img src={logo} alt="HardBrutality" className="h-28 md:h-36 glow-white" />
+            <img src={logo} alt="HardBrutality" className="h-36 md:h-44 glow-white" />
           </div>
 
           {/* Social Links */}
