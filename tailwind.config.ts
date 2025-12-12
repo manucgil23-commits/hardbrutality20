@@ -53,7 +53,7 @@ export default {
       },
       fontFamily: {
         gothic: ["UnifrakturMaguntia", "cursive"],
-        display: ["Teko", "sans-serif"],
+        display: ["Bebas Neue", "sans-serif"],
         mono: ["Space Mono", "monospace"],
       },
       borderRadius: {
