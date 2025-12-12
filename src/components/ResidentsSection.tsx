@@ -62,17 +62,17 @@ export function ResidentsSection() {
     <>
       <section id="residentes" className="py-24 bg-secondary/10 relative overflow-hidden">
         {/* Background Text */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-gothic text-[15vw] text-foreground/[0.02] whitespace-nowrap pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[15vw] text-foreground/[0.02] whitespace-nowrap pointer-events-none uppercase tracking-widest">
           THE CORE
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           {/* Section Title */}
           <div className="mb-16 text-center">
-            <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-foreground mb-2">
+            <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground mb-2 uppercase tracking-wider">
               Resident
             </h2>
-            <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-laser">
+            <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-laser uppercase tracking-wider">
               DJs
             </h2>
           </div>
@@ -107,7 +107,7 @@ export function ResidentsSection() {
                   </span>
 
                   {/* Name */}
-                  <h3 className="font-gothic text-2xl md:text-3xl lg:text-4xl text-foreground mb-2 group-hover:text-glow transition-all">
+                  <h3 className="font-display text-2xl md:text-3xl lg:text-4xl text-foreground mb-2 group-hover:text-glow transition-all uppercase tracking-wide">
                     {dj.name}
                   </h3>
 
@@ -189,7 +189,7 @@ export function ResidentsSection() {
                   {selectedDJ.role}
                 </span>
 
-                <h2 className="font-gothic text-4xl md:text-5xl lg:text-6xl text-foreground mb-4">
+                <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-4 uppercase tracking-wide">
                   {selectedDJ.name}
                 </h2>
 
