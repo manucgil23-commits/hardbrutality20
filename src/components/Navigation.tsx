@@ -8,14 +8,7 @@ const navItems = [
   { label: "INICIO", href: "/" },
   { label: "EVENTOS", href: "/#eventos" },
   { label: "RESIDENTES", href: "/#residentes" },
-  { 
-    label: "MÚSICA", 
-    href: "/musica",
-    dropdown: [
-      { label: "PLAYLISTS", href: "/musica#playlists" },
-      { label: "SETS", href: "/musica#sets" },
-    ]
-  },
+  { label: "MÚSICA", href: "/musica" },
   { 
     label: "MERCH", 
     href: "/merch",
@@ -73,19 +66,19 @@ export function Navigation() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
-            <div key={item.label} className="relative group">
+            <div key={item.label} className="relative group flex items-center">
               {item.dropdown ? (
                 <>
                   <button
                     onClick={() => toggleDropdown(item.label)}
-                    className="font-display text-sm tracking-wider text-muted-foreground hover:text-foreground transition-colors relative flex items-center gap-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-laser after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left"
+                    className="font-display text-sm tracking-wider text-muted-foreground hover:text-foreground transition-colors relative flex items-center gap-1 leading-none after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-laser after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left"
                   >
                     {item.label}
-                    <ChevronDown size={14} className={`transition-transform ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
+                    <ChevronDown size={12} className={`transition-transform ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
                   </button>
                   
                   {/* Dropdown Menu */}
-                  <div className={`absolute top-full left-0 mt-2 py-2 min-w-[160px] bg-background border border-border rounded-sm shadow-lg transition-all duration-200 ${activeDropdown === item.label ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                  <div className={`absolute top-full left-0 mt-4 py-2 min-w-[160px] bg-background border border-border rounded-sm shadow-lg transition-all duration-200 z-50 ${activeDropdown === item.label ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
                     {/* Direct link to main page */}
                     <Link
                       to={item.href}
