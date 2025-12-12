@@ -58,10 +58,10 @@ const Music = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-laser/5 to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h1 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-foreground mb-4">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground mb-4 uppercase tracking-wider">
               Sounds of
             </h1>
-            <h1 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-laser mb-8">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-laser mb-8 uppercase tracking-wider">
               Brutality
             </h1>
             <p className="font-mono text-muted-foreground max-w-2xl mx-auto">
@@ -76,7 +76,7 @@ const Music = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-4 mb-12">
             <MusicIcon className="text-laser" size={32} />
-            <h2 className="font-gothic text-4xl md:text-5xl text-foreground">
+            <h2 className="font-display text-4xl md:text-5xl text-foreground uppercase tracking-wider">
               Official Playlists
             </h2>
           </div>
@@ -114,7 +114,7 @@ const Music = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-4 mb-12">
             <Headphones className="text-laser" size={32} />
-            <h2 className="font-gothic text-4xl md:text-5xl text-foreground">
+            <h2 className="font-display text-4xl md:text-5xl text-foreground uppercase tracking-wider">
               Residents Sets
             </h2>
           </div>
