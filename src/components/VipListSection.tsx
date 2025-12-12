@@ -42,10 +42,10 @@ export function VipListSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           {/* Title */}
-          <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-foreground mb-2">
+          <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground mb-2 uppercase tracking-wider">
             Lista
           </h2>
-          <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-laser mb-8">
+          <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-laser mb-8 uppercase tracking-wider">
             VIP
           </h2>
           

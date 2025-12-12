@@ -54,10 +54,10 @@ export function EventsSection() {
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="mb-16">
-          <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-foreground mb-2">
+          <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground mb-2 uppercase tracking-wider">
             Upcoming
           </h2>
-          <h2 className="font-gothic text-5xl md:text-7xl lg:text-8xl text-laser">
+          <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-laser uppercase tracking-wider">
             Raves
           </h2>
         </div>
