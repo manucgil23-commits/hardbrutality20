@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo-header.png";
@@ -8,13 +8,29 @@ const navItems = [
   { label: "INICIO", href: "/" },
   { label: "EVENTOS", href: "/#eventos" },
   { label: "RESIDENTES", href: "/#residentes" },
-  { label: "MÚSICA", href: "/musica" },
-  { label: "MERCH", href: "/#merch" },
+  { 
+    label: "MÚSICA", 
+    href: "/musica",
+    dropdown: [
+      { label: "PLAYLISTS", href: "/musica#playlists" },
+      { label: "SETS", href: "/musica#sets" },
+    ]
+  },
+  { 
+    label: "MERCH", 
+    href: "/merch",
+    dropdown: [
+      { label: "TIENDA", href: "/merch" },
+      { label: "NOVEDADES", href: "/merch#novedades" },
+    ]
+  },
+  { label: "THE EXPERIENCE", href: "/experience" },
 ];
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -27,6 +43,7 @@ export function Navigation() {
 
   const handleNavClick = (href: string) => {
     setIsOpen(false);
+    setActiveDropdown(null);
     
     // If it's a hash link on the same page
     if (href.startsWith("/#")) {
@@ -36,6 +53,10 @@ export function Navigation() {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
+  };
+
+  const toggleDropdown = (label: string) => {
+    setActiveDropdown(activeDropdown === label ? null : label);
   };
 
   return (
@@ -50,26 +71,59 @@ export function Navigation() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
-            item.href.startsWith("/") && !item.href.includes("#") ? (
-              <Link
-                key={item.label}
-                to={item.href}
-                className="font-display text-sm tracking-wider text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-laser after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left"
-              >
-                {item.label}
-              </Link>
-            ) : (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={() => handleNavClick(item.href)}
-                className="font-display text-sm tracking-wider text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-laser after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left"
-              >
-                {item.label}
-              </a>
-            )
+            <div key={item.label} className="relative group">
+              {item.dropdown ? (
+                <>
+                  <button
+                    onClick={() => toggleDropdown(item.label)}
+                    className="font-display text-sm tracking-wider text-muted-foreground hover:text-foreground transition-colors relative flex items-center gap-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-laser after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left"
+                  >
+                    {item.label}
+                    <ChevronDown size={14} className={`transition-transform ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
+                  </button>
+                  
+                  {/* Dropdown Menu */}
+                  <div className={`absolute top-full left-0 mt-2 py-2 min-w-[160px] bg-background border border-border rounded-sm shadow-lg transition-all duration-200 ${activeDropdown === item.label ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                    {/* Direct link to main page */}
+                    <Link
+                      to={item.href}
+                      onClick={() => handleNavClick(item.href)}
+                      className="block px-4 py-2 font-display text-sm tracking-wider text-muted-foreground hover:text-foreground hover:bg-laser/10 transition-colors"
+                    >
+                      VER TODO
+                    </Link>
+                    <div className="border-t border-border my-1" />
+                    {item.dropdown.map((subItem) => (
+                      <Link
+                        key={subItem.label}
+                        to={subItem.href}
+                        onClick={() => handleNavClick(subItem.href)}
+                        className="block px-4 py-2 font-display text-sm tracking-wider text-muted-foreground hover:text-foreground hover:bg-laser/10 transition-colors"
+                      >
+                        {subItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              ) : item.href.startsWith("/") && !item.href.includes("#") ? (
+                <Link
+                  to={item.href}
+                  className="font-display text-sm tracking-wider text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-laser after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  href={item.href}
+                  onClick={() => handleNavClick(item.href)}
+                  className="font-display text-sm tracking-wider text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-laser after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left"
+                >
+                  {item.label}
+                </a>
+              )}
+            </div>
           ))}
         </div>
 
@@ -87,27 +141,59 @@ export function Navigation() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border animate-slide-up">
-          <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
+          <div className="container mx-auto px-4 py-6 flex flex-col gap-2">
             {navItems.map((item) => (
-              item.href.startsWith("/") && !item.href.includes("#") ? (
-                <Link
-                  key={item.label}
-                  to={item.href}
-                  className="font-display text-lg tracking-wider text-foreground hover:text-laser transition-colors py-2 border-b border-border"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="font-display text-lg tracking-wider text-foreground hover:text-laser transition-colors py-2 border-b border-border"
-                  onClick={() => handleNavClick(item.href)}
-                >
-                  {item.label}
-                </a>
-              )
+              <div key={item.label}>
+                {item.dropdown ? (
+                  <>
+                    <button
+                      onClick={() => toggleDropdown(item.label)}
+                      className="w-full flex items-center justify-between font-display text-lg tracking-wider text-foreground hover:text-laser transition-colors py-2 border-b border-border"
+                    >
+                      {item.label}
+                      <ChevronDown size={18} className={`transition-transform ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
+                    </button>
+                    
+                    {activeDropdown === item.label && (
+                      <div className="pl-4 py-2 space-y-2 border-b border-border">
+                        <Link
+                          to={item.href}
+                          onClick={() => handleNavClick(item.href)}
+                          className="block font-display text-base tracking-wider text-muted-foreground hover:text-laser transition-colors py-1"
+                        >
+                          VER TODO
+                        </Link>
+                        {item.dropdown.map((subItem) => (
+                          <Link
+                            key={subItem.label}
+                            to={subItem.href}
+                            onClick={() => handleNavClick(subItem.href)}
+                            className="block font-display text-base tracking-wider text-muted-foreground hover:text-laser transition-colors py-1"
+                          >
+                            {subItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : item.href.startsWith("/") && !item.href.includes("#") ? (
+                  <Link
+                    to={item.href}
+                    className="font-display text-lg tracking-wider text-foreground hover:text-laser transition-colors py-2 border-b border-border block"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a
+                    href={item.href}
+                    className="font-display text-lg tracking-wider text-foreground hover:text-laser transition-colors py-2 border-b border-border block"
+                    onClick={() => handleNavClick(item.href)}
+                  >
+                    {item.label}
+                  </a>
+                )}
+              </div>
             ))}
           </div>
         </div>

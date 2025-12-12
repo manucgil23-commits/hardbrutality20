@@ -3,8 +3,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { Marquee } from "@/components/Marquee";
 import { EventsSection } from "@/components/EventsSection";
 import { ResidentsSection } from "@/components/ResidentsSection";
-import { MerchSection } from "@/components/MerchSection";
-import { GallerySection } from "@/components/GallerySection";
+import { VipListSection } from "@/components/VipListSection";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -15,8 +14,7 @@ const Index = () => {
       <Marquee />
       <EventsSection />
       <ResidentsSection />
-      <MerchSection />
-      <GallerySection />
+      <VipListSection />
       <Footer />
     </main>
   );
