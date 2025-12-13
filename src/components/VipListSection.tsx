@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { Zap, Star } from "lucide-react";
+import { Star } from "lucide-react";
 
 export function VipListSection() {
   const [email, setEmail] = useState("");
@@ -45,13 +45,6 @@ export function VipListSection() {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-laser/50 to-transparent" />
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-laser/50 to-transparent" />
       
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 text-laser/20 animate-pulse">
-        <Zap size={40} />
-      </div>
-      <div className="absolute bottom-20 right-10 text-laser/20 animate-pulse delay-500">
-        <Zap size={40} />
-      </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto">
@@ -121,7 +114,7 @@ export function VipListSection() {
           {/* Stats/Social Proof */}
           <div className="flex justify-center gap-8 mt-12 pt-8 border-t border-border/30">
             <div className="text-center">
-              <div className="font-display text-3xl md:text-4xl text-foreground">2K+</div>
+              <div className="font-display text-3xl md:text-4xl text-foreground">500+</div>
               <div className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Members</div>
             </div>
             <div className="w-px bg-border/30" />
