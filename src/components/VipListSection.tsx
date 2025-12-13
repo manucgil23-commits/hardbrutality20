@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { Zap, Star } from "lucide-react";
 
 export function VipListSection() {
   const [email, setEmail] = useState("");
@@ -34,50 +35,106 @@ export function VipListSection() {
   };
 
   return (
-    <section className="py-24 bg-secondary/10 relative overflow-hidden">
+    <section className="py-32 relative overflow-hidden bg-background">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-laser/5 via-transparent to-transparent" />
-      <div className="absolute inset-0 noise opacity-30" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-laser/10 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-laser/5 via-transparent to-transparent" />
+      <div className="absolute inset-0 noise opacity-40" />
+      
+      {/* Decorative Lines */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-laser/50 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-laser/50 to-transparent" />
+      
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-10 text-laser/20 animate-pulse">
+        <Zap size={40} />
+      </div>
+      <div className="absolute bottom-20 right-10 text-laser/20 animate-pulse delay-500">
+        <Zap size={40} />
+      </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-2xl mx-auto text-center">
-          {/* Title */}
-          <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground mb-2 uppercase tracking-wider">
-            Lista
-          </h2>
-          <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-laser mb-8 uppercase tracking-wider">
-            VIP
-          </h2>
+        <div className="max-w-3xl mx-auto">
+          {/* Title Block */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 mb-6">
+              <Star className="w-5 h-5 text-laser fill-laser" />
+              <span className="font-mono text-sm text-laser tracking-[0.3em] uppercase">Acceso Exclusivo</span>
+              <Star className="w-5 h-5 text-laser fill-laser" />
+            </div>
+            
+            <h2 className="font-display text-6xl md:text-8xl lg:text-9xl text-foreground uppercase tracking-wider leading-none">
+              LISTA
+            </h2>
+            <h2 className="font-display text-6xl md:text-8xl lg:text-9xl text-laser uppercase tracking-wider leading-none relative">
+              VIP
+              <span className="absolute inset-0 text-laser blur-lg opacity-50">VIP</span>
+            </h2>
+          </div>
           
           {/* Description */}
-          <p className="font-mono text-muted-foreground text-lg md:text-xl mb-12 leading-relaxed">
-            Entérate antes que nadie de los eventos, consigue acceso exclusivo y gana entradas gratis.
+          <p className="font-mono text-muted-foreground text-center text-lg md:text-xl mb-12 max-w-xl mx-auto leading-relaxed">
+            Entérate antes que nadie de los eventos, consigue <span className="text-laser">acceso exclusivo</span> y gana entradas gratis.
           </p>
           
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <Input
-              type="email"
-              placeholder="tu@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 bg-background border-border focus:border-laser font-mono text-foreground placeholder:text-muted-foreground h-12"
-            />
-            <Button 
-              type="submit" 
-              variant="brutal" 
-              size="lg"
-              disabled={isLoading}
-              className="whitespace-nowrap"
+          {/* Form Container */}
+          <div className="relative">
+            {/* Glow Effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-laser/20 via-laser/10 to-laser/20 rounded-sm blur-xl opacity-50" />
+            
+            {/* Form */}
+            <form 
+              onSubmit={handleSubmit} 
+              className="relative flex flex-col sm:flex-row gap-4 p-6 bg-secondary/20 border border-laser/30 backdrop-blur-sm"
             >
-              {isLoading ? "ENVIANDO..." : "SUSCRIBIRME"}
-            </Button>
-          </form>
+              <Input
+                type="email"
+                placeholder="tu@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 bg-background/50 border-border/50 focus:border-laser font-mono text-foreground placeholder:text-muted-foreground h-14 text-lg"
+              />
+              <Button 
+                type="submit" 
+                variant="brutal" 
+                size="lg"
+                disabled={isLoading}
+                className="h-14 px-8 text-lg whitespace-nowrap"
+              >
+                {isLoading ? (
+                  <span className="flex items-center gap-2">
+                    <span className="animate-pulse">ENVIANDO</span>
+                    <span className="animate-bounce">...</span>
+                  </span>
+                ) : (
+                  "ÚNETE AHORA"
+                )}
+              </Button>
+            </form>
+          </div>
           
           {/* Privacy note */}
-          <p className="font-mono text-xs text-muted-foreground mt-6">
-            Sin spam. Solo brutalidad.
+          <p className="font-mono text-xs text-muted-foreground mt-8 text-center tracking-wider">
+            [ SIN SPAM. SOLO BRUTALIDAD. ]
           </p>
+          
+          {/* Stats/Social Proof */}
+          <div className="flex justify-center gap-8 mt-12 pt-8 border-t border-border/30">
+            <div className="text-center">
+              <div className="font-display text-3xl md:text-4xl text-foreground">2K+</div>
+              <div className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Members</div>
+            </div>
+            <div className="w-px bg-border/30" />
+            <div className="text-center">
+              <div className="font-display text-3xl md:text-4xl text-laser">VIP</div>
+              <div className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Access</div>
+            </div>
+            <div className="w-px bg-border/30" />
+            <div className="text-center">
+              <div className="font-display text-3xl md:text-4xl text-foreground">24H</div>
+              <div className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Early</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
