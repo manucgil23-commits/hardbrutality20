@@ -11,6 +11,7 @@ interface Event {
   lineup: string[];
   ticketUrl: string;
   details: string;
+  location?: string;
   comingSoon?: boolean;
 }
 
@@ -23,7 +24,8 @@ const events: Event[] = [
     venue: "SALA COCO",
     lineup: ["TARKNO", "CRIEVEK B2B MARCOSRII", "BLUNTZ B2B TASUIK", "KØNI B2B M.I.XX.I", "RODS B2B SAME"],
     ticketUrl: "https://web.fourvenues.com/es/coco-madrid/events/hardbrutality-18-12-2025-IX5H",
-    details: "El hardgroove regresa con fuerza a la capital. Desde Berlín llega Tarkno, maestro del vinilo y referente absoluto del underground, acompañado por algunos de los DJs de Madrid que más están marcando la escena actual. Además, contamos con la presencia de @treze, una de las marcas urbanas más respetadas del momento. Prepárate para una noche de hardgroove sin frenos. ⭐ Ubicación: Calle Alcalá 20, 28014 Madrid, Spain",
+    details: "El hardgroove regresa con fuerza a la capital. Desde Berlín llega Tarkno, maestro del vinilo y referente absoluto del underground, acompañado por algunos de los DJs de Madrid que más están marcando la escena actual. Además, contamos con la presencia de @treze, una de las marcas urbanas más respetadas del momento. Prepárate para una noche de hardgroove sin frenos.",
+    location: "⭐ Ubicación: Calle Alcalá 20, 28014 Madrid, Spain",
     comingSoon: false,
   },
   {
@@ -134,9 +136,16 @@ export function EventsSection() {
               {expandedId === event.id && !event.comingSoon && (
                 <div className="border-t border-border p-6 bg-secondary/20 animate-slide-up">
                   <div className="flex justify-between items-start">
-                    <p className="font-mono text-sm text-muted-foreground max-w-2xl text-justify">
-                      {event.details}
-                    </p>
+                    <div className="max-w-2xl space-y-4">
+                      <p className="font-mono text-sm text-muted-foreground text-justify">
+                        {event.details}
+                      </p>
+                      {event.location && (
+                        <p className="font-mono text-sm text-laser">
+                          {event.location}
+                        </p>
+                      )}
+                    </div>
                     <button
                       onClick={() => setExpandedId(null)}
                       className="text-muted-foreground hover:text-foreground transition-colors"
