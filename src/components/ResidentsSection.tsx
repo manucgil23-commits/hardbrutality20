@@ -58,6 +58,17 @@ const residents: DJ[] = [
 export function ResidentsSection() {
   const [selectedDJ, setSelectedDJ] = useState<DJ | null>(null);
 
+  // Lock body scroll when modal is open
+  const openModal = (dj: DJ) => {
+    setSelectedDJ(dj);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setSelectedDJ(null);
+    document.body.style.overflow = 'unset';
+  };
+
   return (
     <>
       <section id="residentes" className="py-24 bg-secondary/10 relative overflow-hidden">
@@ -84,7 +95,7 @@ export function ResidentsSection() {
                 key={dj.name}
                 className="group relative aspect-[3/4] overflow-hidden border border-border hover:border-laser transition-all duration-500 cursor-pointer"
                 style={{ animationDelay: `${index * 100}ms` }}
-                onClick={() => setSelectedDJ(dj)}
+                onClick={() => openModal(dj)}
               >
                 {/* Image */}
                 <img
@@ -141,8 +152,8 @@ export function ResidentsSection() {
       {/* DJ Modal */}
       {selectedDJ && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedDJ(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4"
+          onClick={closeModal}
         >
           {/* Video Background */}
           <div className="absolute inset-0">
@@ -160,15 +171,15 @@ export function ResidentsSection() {
 
           {/* Modal Content */}
           <div
-            className="relative w-full max-w-4xl bg-card border border-border animate-slide-up"
+            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-card border border-border animate-slide-up"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
+            {/* Close Button - Fixed position for mobile */}
             <button
-              onClick={() => setSelectedDJ(null)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center border border-border hover:border-laser hover:text-laser transition-colors"
+              onClick={closeModal}
+              className="absolute top-2 right-2 md:top-4 md:right-4 z-20 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center border border-border bg-card hover:border-laser hover:text-laser transition-colors"
             >
-              <X size={20} />
+              <X size={16} className="md:w-5 md:h-5" />
             </button>
 
             <div className="flex flex-col md:flex-row">
@@ -184,7 +195,7 @@ export function ResidentsSection() {
               </div>
 
               {/* Info */}
-              <div className="p-6 md:p-8 md:w-1/2 flex flex-col justify-center">
+              <div className="p-4 pt-8 md:p-8 md:w-1/2 flex flex-col justify-center">
                 <span className="inline-block font-mono text-xs text-laser border border-laser px-2 py-1 mb-4 self-start">
                   {selectedDJ.role}
                 </span>

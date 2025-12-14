@@ -21,7 +21,7 @@ const events: Event[] = [
     day: "JUE",
     month: "DIC",
     venue: "SALA COCO",
-    lineup: ["TARKNP", "CRIEVEK B2B MARCOSRII", "BLUNTZ B2B TASUIK", "KØNi B2B M.I.XX.I", "RODS B2B SAME"],
+    lineup: ["TARKNO", "CRIEVEK B2B MARCOSRII", "BLUNTZ B2B TASUIK", "KØNI B2B M.I.XX.I", "RODS B2B SAME"],
     ticketUrl: "https://web.fourvenues.com/es/coco-madrid/events/hardbrutality-18-12-2025-IX5H",
     details: "El hardgroove regresa con fuerza a la capital. Desde Berlín llega Tarkno, maestro del vinilo y referente absoluto del underground, acompañado por algunos de los DJs de Madrid que más están marcando la escena actual. Además, contamos con la presencia de @treze, una de las marcas urbanas más respetadas del momento. Prepárate para una noche de hardgroove sin frenos. ⭐ Ubicación: Calle Alcalá 20, 28014 Madrid, Spain",
     comingSoon: false,
