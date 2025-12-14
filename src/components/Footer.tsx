@@ -59,13 +59,23 @@ export function Footer() {
         {/* Bottom Row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Legal */}
-          <p className="font-mono text-xs text-muted-foreground">
-            © 2024 HARDBRUTALITY. ALL RIGHTS RESERVED.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <p className="font-mono text-xs text-muted-foreground">
+              © 2025 HARDBRUTALITY. ALL RIGHTS RESERVED.
+            </p>
+            <a
+              href="https://instagram.com/maylink_ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs text-muted-foreground hover:text-laser transition-colors"
+            >
+              WEB DESIGN BY MAYLINKAI
+            </a>
+          </div>
 
           {/* Tagline */}
           <p className="font-mono text-xs text-laser tracking-widest">
-            MADRID HARD TECHNO CULTURE
+            MADRID HARD GROOVE CULTURE
           </p>
         </div>
       </div>
