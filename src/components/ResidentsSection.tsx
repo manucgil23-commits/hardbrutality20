@@ -217,7 +217,7 @@ export function ResidentsSection() {
                 </div>
 
                 {/* Bio */}
-                <p className="font-mono text-sm text-muted-foreground leading-relaxed mb-8">
+                <p className="font-mono text-sm text-muted-foreground leading-relaxed mb-8 text-justify">
                   {selectedDJ.fullBio}
                 </p>
 
