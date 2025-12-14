@@ -122,8 +122,8 @@ export function ResidentsSection() {
                     {dj.name}
                   </h3>
 
-                  {/* Bio - Hidden until hover */}
-                  <p className="font-mono text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 line-clamp-2">
+                  {/* Bio - Hidden until hover, only on desktop */}
+                  <p className="hidden md:block font-mono text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 line-clamp-2">
                     {dj.shortBio}
                   </p>
                 </div>
