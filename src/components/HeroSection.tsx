@@ -50,18 +50,18 @@ export function HeroSection() {
           
           {/* Neon Glitch Subtitle - positioned inside the logo area */}
           {showSubtitle && (
-            <div className="absolute -bottom-8 sm:-bottom-12 md:-bottom-16 lg:bottom-32 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 md:gap-4">
-              <p className="font-display text-xs sm:text-sm md:text-2xl lg:text-3xl text-foreground tracking-[0.2em] md:tracking-[0.3em] neon-glitch-text whitespace-nowrap">
+            <div className="absolute -bottom-8 sm:-bottom-10 md:-bottom-4 lg:bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 md:gap-2 lg:gap-3">
+              <p className="font-display text-xs sm:text-sm md:text-base lg:text-2xl text-foreground tracking-[0.2em] md:tracking-[0.25em] lg:tracking-[0.3em] neon-glitch-text whitespace-nowrap">
                 VAMOS POR TI MADRID
               </p>
               
               {/* Madrid Stars (7 stars: 4 top + 3 bottom) */}
-              <div className="flex flex-col items-center gap-0.5 md:gap-1 opacity-80">
-                <div className="flex items-center gap-1 md:gap-2">
+              <div className="flex flex-col items-center gap-0.5 opacity-80">
+                <div className="flex items-center gap-1 md:gap-1.5 lg:gap-2">
                   {[...Array(4)].map((_, i) => (
                     <svg
                       key={i}
-                      className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-4 md:h-4 text-foreground"
+                      className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-2.5 md:h-2.5 lg:w-3.5 lg:h-3.5 text-foreground"
                       viewBox="0 0 24 24"
                       fill="currentColor"
                     >
@@ -69,11 +69,11 @@ export function HeroSection() {
                     </svg>
                   ))}
                 </div>
-                <div className="flex items-center gap-1 md:gap-2">
+                <div className="flex items-center gap-1 md:gap-1.5 lg:gap-2">
                   {[...Array(3)].map((_, i) => (
                     <svg
                       key={i}
-                      className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-4 md:h-4 text-foreground"
+                      className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-2.5 md:h-2.5 lg:w-3.5 lg:h-3.5 text-foreground"
                       viewBox="0 0 24 24"
                       fill="currentColor"
                     >
