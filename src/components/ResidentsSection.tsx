@@ -30,9 +30,9 @@ const residents: DJ[] = [
     name: "RODS",
     image: djRods,
     role: "RESIDENT DJ",
-    shortBio: "Hypnotic loops and relentless bass. The backbone of our sound.",
-    fullBio: "RODS representa la esencia pura del hard techno madrileño. Con una década de experiencia tras los platos, su sonido hipnótico y su bajo incansable han definido el sonido de HardBrutality desde sus inicios. Residente en las mejores salas de Madrid.",
-    genres: ["Hardtechno", "Industrial", "Hypnotic"],
+    shortBio: "DJ y productor madrileño con seis años agitando la escena.",
+    fullBio: "DJ y productor madrileño con seis años agitando la escena. Ha dejado su huella en la icónica sala Avalon y colaborado con colectivos como Technetium y Nitro. Sus sets son un viaje de energía implacable, fusionando Hardgroove hipnótico con la contundencia del Hardbounce y el Hard Techno. Rods convierte cada sesión en una experiencia inmersiva y visceral.",
+    genres: ["Hardgroove", "Hardbounce", "Hardtechno"],
     musicUrl: "https://soundcloud.com/hardbrutality/hardbrutality-podcast-6-rods",
   },
   {
