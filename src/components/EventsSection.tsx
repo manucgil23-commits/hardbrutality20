@@ -134,7 +134,7 @@ export function EventsSection() {
               {expandedId === event.id && !event.comingSoon && (
                 <div className="border-t border-border p-6 bg-secondary/20 animate-slide-up">
                   <div className="flex justify-between items-start">
-                    <p className="font-mono text-sm text-muted-foreground max-w-2xl">
+                    <p className="font-mono text-sm text-muted-foreground max-w-2xl text-justify">
                       {event.details}
                     </p>
                     <button
