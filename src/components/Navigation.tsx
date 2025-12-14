@@ -55,6 +55,13 @@ export function Navigation() {
     setIsOpen(false);
     setActiveDropdown(null);
     
+    // If clicking INICIO, scroll to top
+    if (href === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    
     // If it's a hash link on the same page
     if (href.startsWith("/#")) {
       const elementId = href.replace("/#", "");

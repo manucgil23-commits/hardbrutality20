@@ -17,10 +17,10 @@ interface Event {
 const events: Event[] = [
   {
     id: 1,
-    date: "21",
-    day: "SAB",
+    date: "18",
+    day: "JUE",
     month: "DIC",
-    venue: "SALA MONDO DISKO",
+    venue: "SALA COCO",
     lineup: ["M.I.XX.I", "RODS", "SAME", "KØNI"],
     ticketUrl: "#",
     details: "Evento especial de cierre de año. Doors open 23:00. Dress code: All black. No photos allowed on the dancefloor.",
