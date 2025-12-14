@@ -10,11 +10,19 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
-      <HeroSection />
-      <Marquee />
-      <EventsSection />
-      <ResidentsSection />
-      <VipListSection />
+      <div 
+        className="w-full bg-[#1c1c1c] relative z-0"
+        style={{
+          backgroundImage: 'linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px)',
+          backgroundSize: '24px 24px'
+        }}
+      >
+        <HeroSection />
+        <Marquee />
+        <EventsSection />
+        <ResidentsSection />
+        <VipListSection />
+      </div>
       <Footer />
     </main>
   );
