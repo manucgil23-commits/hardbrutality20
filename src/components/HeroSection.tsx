@@ -50,7 +50,7 @@ export function HeroSection() {
           
           {/* Neon Glitch Subtitle - positioned inside the logo area */}
           {showSubtitle && (
-            <div className="absolute -bottom-8 sm:-bottom-10 md:-bottom-4 lg:bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 md:gap-2 lg:gap-3">
+            <div className="absolute -bottom-8 sm:-bottom-10 md:bottom-4 lg:bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 md:gap-2 lg:gap-3">
               <p className="font-display text-xs sm:text-sm md:text-base lg:text-2xl text-foreground tracking-[0.2em] md:tracking-[0.25em] lg:tracking-[0.3em] neon-glitch-text whitespace-nowrap">
                 VAMOS POR TI MADRID
               </p>
