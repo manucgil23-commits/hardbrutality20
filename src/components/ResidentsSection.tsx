@@ -23,8 +23,8 @@ const residents: DJ[] = [
     role: "RESIDENT DJ",
     shortBio: "Nacida en Tudela, basada en Madrid. Sets machacones y divertidos.",
     fullBio: "Nacida en Tudela y basada en Madrid. M.I.XX.I fusiona lo sexy, metalero y punky, entregando sets machacones y divertidos. Ha destruido pistas en Fabrik, Groove, The Bassement y Sala Muv. Su estilo parte la pista al ritmo del galope.",
-    genres: ["Schranz", "Hardtechno", "Acid", "Hardgroove"],
-    musicUrl: "https://soundcloud.com",
+    genres: ["Schranz", "Urbano", "Acid", "Hardgroove"],
+    musicUrl: "https://on.soundcloud.com/okwkBeKuIYynSUYixA",
   },
   {
     name: "RODS",
@@ -33,7 +33,7 @@ const residents: DJ[] = [
     shortBio: "Hypnotic loops and relentless bass. The backbone of our sound.",
     fullBio: "RODS representa la esencia pura del hard techno madrileño. Con una década de experiencia tras los platos, su sonido hipnótico y su bajo incansable han definido el sonido de HardBrutality desde sus inicios. Residente en las mejores salas de Madrid.",
     genres: ["Hardtechno", "Industrial", "Hypnotic"],
-    musicUrl: "https://soundcloud.com",
+    musicUrl: "https://soundcloud.com/hardbrutality/hardbrutality-podcast-6-rods",
   },
   {
     name: "SAME",
@@ -42,7 +42,7 @@ const residents: DJ[] = [
     shortBio: "Dark atmospheres and peak-time energy. The shadow in the booth.",
     fullBio: "SAME es la sombra en la cabina. Especialista en atmósferas oscuras y energía de peak-time, sus sets llevan al público a un viaje a través de los sonidos más oscuros del techno industrial. Su presencia en el escenario es tan magnética como su música.",
     genres: ["Industrial", "Dark Techno", "Peak-time"],
-    musicUrl: "https://soundcloud.com",
+    musicUrl: "https://soundcloud.com/samegothecure",
   },
   {
     name: "KØNI",
@@ -51,7 +51,7 @@ const residents: DJ[] = [
     shortBio: "Acid-driven techno meets industrial rage. Pure adrenaline.",
     fullBio: "KØNI canaliza la rabia industrial a través de líneas ácidas devastadoras. Su techno cargado de adrenalina es un viaje sin retorno a través de los sonidos más agresivos de la escena. Cada set es una experiencia visceral que deja huella en quien lo vive.",
     genres: ["Acid", "Hardtechno", "Industrial Rage"],
-    musicUrl: "https://soundcloud.com",
+    musicUrl: "https://on.soundcloud.com/w6exOB1YyUYJ5OP5sC",
   },
 ];
 
