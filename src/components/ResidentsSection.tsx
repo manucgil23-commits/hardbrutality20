@@ -3,7 +3,7 @@ import { X, Play, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import djMixxi from "@/assets/dj-mixxi.jpg";
 import djRods from "@/assets/dj-rods-new.jpg";
-import djSame from "@/assets/dj-same.jpg";
+import djSame from "@/assets/dj-same-new.png";
 import djKoni from "@/assets/dj-koni.png";
 
 interface DJ {
@@ -39,9 +39,9 @@ const residents: DJ[] = [
     name: "SAME",
     image: djSame,
     role: "RESIDENT DJ",
-    shortBio: "Dark atmospheres and peak-time energy. The shadow in the booth.",
-    fullBio: "SAME es la sombra en la cabina. Especialista en atmósferas oscuras y energía de peak-time, sus sets llevan al público a un viaje a través de los sonidos más oscuros del techno industrial. Su presencia en el escenario es tan magnética como su música.",
-    genres: ["Industrial", "Dark Techno", "Peak-time"],
+    shortBio: "Sintetizadores ácidos, BPMs vertiginosos y puro espíritu rave.",
+    fullBio: "Sintetizadores ácidos, BPMs vertiginosos y puro espíritu rave definen a SAME. Este artista madrileño fusiona influencias Hardcore conservando una esencia Techno pulcra, rápida y contundente. En apenas un año, ha detonado pistas como Matadero (Murcia), Sala Berlín (Granada) y la icónica Sala Independance. Como productor, destaca su lanzamiento 'BECAREFULL' en el sello berlinés TX Records",
+    genres: ["Hard Techno", "Hardgroove", "Schranz", "Acid"],
     musicUrl: "https://soundcloud.com/samegothecure",
   },
   {
