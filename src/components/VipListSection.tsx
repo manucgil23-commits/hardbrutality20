@@ -36,14 +36,13 @@ export function VipListSection() {
 
   return (
     <section className="py-32 relative overflow-hidden bg-background">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-laser/10 via-transparent to-transparent" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-laser/5 via-transparent to-transparent" />
-      <div className="absolute inset-0 noise opacity-40" />
+      {/* Subtle Background Effects - No harsh color transition */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary/30 via-transparent to-transparent" />
+      <div className="absolute inset-0 noise opacity-30" />
       
-      {/* Decorative Lines */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-laser/50 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-laser/50 to-transparent" />
+      {/* Subtle Decorative Lines */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
       
       
       <div className="container mx-auto px-4 relative z-10">

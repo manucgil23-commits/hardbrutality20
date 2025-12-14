@@ -11,6 +11,7 @@ interface Event {
   lineup: string[];
   ticketUrl: string;
   details: string;
+  comingSoon?: boolean;
 }
 
 const events: Event[] = [
@@ -23,26 +24,29 @@ const events: Event[] = [
     lineup: ["M.I.XX.I", "RODS", "SAME", "KØNI"],
     ticketUrl: "#",
     details: "Evento especial de cierre de año. Doors open 23:00. Dress code: All black. No photos allowed on the dancefloor.",
+    comingSoon: false,
   },
   {
     id: 2,
     date: "18",
     day: "SAB",
     month: "ENE",
-    venue: "INDUSTRIAL COPERA",
-    lineup: ["SAMA'", "HÉCTOR OAKS", "RODS"],
+    venue: "PRÓXIMAMENTE",
+    lineup: ["???", "???", "???"],
     ticketUrl: "#",
-    details: "Warehouse rave. 3 rooms, 12 hours non-stop. Expect the unexpected. Limited capacity - get your tickets early.",
+    details: "Detalles próximamente...",
+    comingSoon: true,
   },
   {
     id: 3,
     date: "15",
     day: "SAB",
     month: "FEB",
-    venue: "FABRIK MADRID",
-    lineup: ["CHARLIE SPARKS", "M.I.XX.I", "KØNI"],
+    venue: "PRÓXIMAMENTE",
+    lineup: ["???", "???", "???"],
     ticketUrl: "#",
-    details: "Main room takeover. Industrial hard techno all night. Sound system by Funktion-One.",
+    details: "Detalles próximamente...",
+    comingSoon: true,
   },
 ];
 
@@ -67,10 +71,26 @@ export function EventsSection() {
           {events.map((event) => (
             <div
               key={event.id}
-              className="group relative border border-border bg-card hover:border-laser transition-all duration-300 hover-lift"
+              className={`group relative border bg-card transition-all duration-300 ${
+                event.comingSoon 
+                  ? 'border-border/50 opacity-80' 
+                  : 'border-border hover:border-laser hover-lift'
+              } overflow-hidden`}
             >
+              {/* Coming Soon Ribbon */}
+              {event.comingSoon && (
+                <>
+                  <div className="absolute inset-0 bg-background/60 backdrop-blur-[2px] z-10" />
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-12 w-[150%] bg-laser py-2 z-20">
+                    <p className="font-display text-lg md:text-2xl text-background text-center tracking-[0.3em] uppercase whitespace-nowrap">
+                      PRÓXIMAMENTE • PRÓXIMAMENTE • PRÓXIMAMENTE • PRÓXIMAMENTE
+                    </p>
+                  </div>
+                </>
+              )}
+
               {/* Main Card Content */}
-              <div className="flex flex-col md:flex-row md:items-center p-6 gap-6">
+              <div className={`flex flex-col md:flex-row md:items-center p-6 gap-6 ${event.comingSoon ? 'blur-[3px]' : ''}`}>
                 {/* Date Block */}
                 <div className="flex md:flex-col items-center md:items-start gap-2 md:gap-0 md:w-24">
                   <span className="font-display text-5xl md:text-6xl text-foreground leading-none">
@@ -96,18 +116,20 @@ export function EventsSection() {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex gap-3">
-                  <Button variant="outline" size="sm" onClick={() => setExpandedId(expandedId === event.id ? null : event.id)}>
-                    + INFO
-                  </Button>
-                  <Button variant="brutal" size="sm">
-                    COMPRAR ENTRADAS
-                  </Button>
-                </div>
+                {!event.comingSoon && (
+                  <div className="flex gap-3">
+                    <Button variant="outline" size="sm" onClick={() => setExpandedId(expandedId === event.id ? null : event.id)}>
+                      + INFO
+                    </Button>
+                    <Button variant="brutal" size="sm">
+                      COMPRAR ENTRADAS
+                    </Button>
+                  </div>
+                )}
               </div>
 
               {/* Expanded Details */}
-              {expandedId === event.id && (
+              {expandedId === event.id && !event.comingSoon && (
                 <div className="border-t border-border p-6 bg-secondary/20 animate-slide-up">
                   <div className="flex justify-between items-start">
                     <p className="font-mono text-sm text-muted-foreground max-w-2xl">
@@ -124,8 +146,12 @@ export function EventsSection() {
               )}
 
               {/* Corner Accent */}
-              <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-laser opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-laser opacity-0 group-hover:opacity-100 transition-opacity" />
+              {!event.comingSoon && (
+                <>
+                  <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-laser opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-laser opacity-0 group-hover:opacity-100 transition-opacity" />
+                </>
+              )}
             </div>
           ))}
         </div>
