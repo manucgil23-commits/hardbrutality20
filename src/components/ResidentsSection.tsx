@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { X, Play, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import djMixxi from "@/assets/dj-mixxi.jpg";
 import djRods from "@/assets/dj-rods-new.jpg";
 import djSame from "@/assets/dj-same-new.png";
@@ -57,6 +58,7 @@ const residents: DJ[] = [
 
 export function ResidentsSection() {
   const [selectedDJ, setSelectedDJ] = useState<DJ | null>(null);
+  const { ref: sectionRef, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   // Lock body scroll when modal is open
   const openModal = (dj: DJ) => {
@@ -77,7 +79,12 @@ export function ResidentsSection() {
           THE CORE
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div 
+          ref={sectionRef}
+          className={`container mx-auto px-4 relative z-10 transition-all duration-700 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           {/* Section Title */}
           <div className="mb-16 text-center">
             <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground mb-2 uppercase tracking-wider">
