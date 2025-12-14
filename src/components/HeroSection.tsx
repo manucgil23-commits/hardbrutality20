@@ -50,18 +50,18 @@ export function HeroSection() {
           
           {/* Neon Glitch Subtitle - positioned inside the logo area */}
           {showSubtitle && (
-            <div className="absolute -bottom-8 sm:bottom-4 md:bottom-32 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
-              <p className="font-display text-lg md:text-2xl lg:text-3xl text-foreground tracking-[0.3em] neon-glitch-text whitespace-nowrap">
+            <div className="absolute -bottom-8 sm:-bottom-4 md:bottom-32 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 md:gap-4">
+              <p className="font-display text-xs sm:text-sm md:text-2xl lg:text-3xl text-foreground tracking-[0.2em] md:tracking-[0.3em] neon-glitch-text whitespace-nowrap">
                 VAMOS POR TI MADRID
               </p>
               
               {/* Madrid Stars (7 stars: 4 top + 3 bottom) */}
-              <div className="flex flex-col items-center gap-1 opacity-80">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-col items-center gap-0.5 md:gap-1 opacity-80">
+                <div className="flex items-center gap-1 md:gap-2">
                   {[...Array(4)].map((_, i) => (
                     <svg
                       key={i}
-                      className="w-3 h-3 md:w-4 md:h-4 text-foreground"
+                      className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-4 md:h-4 text-foreground"
                       viewBox="0 0 24 24"
                       fill="currentColor"
                     >
@@ -69,11 +69,11 @@ export function HeroSection() {
                     </svg>
                   ))}
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1 md:gap-2">
                   {[...Array(3)].map((_, i) => (
                     <svg
                       key={i}
-                      className="w-3 h-3 md:w-4 md:h-4 text-foreground"
+                      className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-4 md:h-4 text-foreground"
                       viewBox="0 0 24 24"
                       fill="currentColor"
                     >
