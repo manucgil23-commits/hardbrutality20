@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Star } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export function VipListSection() {
   const [email, setEmail] = useState("");
@@ -34,6 +35,8 @@ export function VipListSection() {
     }, 1000);
   };
 
+  const { ref: sectionRef, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section className="py-32 relative overflow-hidden bg-background">
       {/* Noise overlay - same as other sections */}
@@ -43,7 +46,12 @@ export function VipListSection() {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/30 to-transparent" />
       
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div 
+        ref={sectionRef}
+        className={`container mx-auto px-4 relative z-10 transition-all duration-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="max-w-3xl mx-auto">
           {/* Title Block */}
           <div className="text-center mb-12">
