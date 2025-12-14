@@ -21,15 +21,15 @@ const events: Event[] = [
     day: "JUE",
     month: "DIC",
     venue: "SALA COCO",
-    lineup: ["M.I.XX.I", "RODS", "SAME", "KØNI"],
-    ticketUrl: "#",
-    details: "Evento especial de cierre de año. Doors open 23:00. Dress code: All black. No photos allowed on the dancefloor.",
+    lineup: ["TARKNP", "CRIEVEK B2B MARCOSRII", "BLUNTZ B2B TASUIK", "KØNi B2B M.I.XX.I", "RODS B2B SAME"],
+    ticketUrl: "https://web.fourvenues.com/es/coco-madrid/events/hardbrutality-18-12-2025-IX5H",
+    details: "El hardgroove regresa con fuerza a la capital. Desde Berlín llega Tarkno, maestro del vinilo y referente absoluto del underground, acompañado por algunos de los DJs de Madrid que más están marcando la escena actual. Además, contamos con la presencia de @treze, una de las marcas urbanas más respetadas del momento. Prepárate para una noche de hardgroove sin frenos. ⭐ Ubicación: Calle Alcalá 20, 28014 Madrid, Spain",
     comingSoon: false,
   },
   {
     id: 2,
-    date: "18",
-    day: "SAB",
+    date: "08",
+    day: "JUE",
     month: "ENE",
     venue: "PRÓXIMAMENTE",
     lineup: ["???", "???", "???"],
@@ -40,8 +40,8 @@ const events: Event[] = [
   {
     id: 3,
     date: "15",
-    day: "SAB",
-    month: "FEB",
+    day: "JUE",
+    month: "ENE",
     venue: "PRÓXIMAMENTE",
     lineup: ["???", "???", "???"],
     ticketUrl: "#",
@@ -62,7 +62,7 @@ export function EventsSection() {
             Upcoming
           </h2>
           <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-laser uppercase tracking-wider">
-            Raves
+            Dates
           </h2>
         </div>
 
@@ -121,8 +121,10 @@ export function EventsSection() {
                     <Button variant="outline" size="sm" onClick={() => setExpandedId(expandedId === event.id ? null : event.id)}>
                       + INFO
                     </Button>
-                    <Button variant="brutal" size="sm">
-                      COMPRAR ENTRADAS
+                    <Button variant="brutal" size="sm" asChild>
+                      <a href={event.ticketUrl} target="_blank" rel="noopener noreferrer">
+                        COMPRAR ENTRADAS
+                      </a>
                     </Button>
                   </div>
                 )}

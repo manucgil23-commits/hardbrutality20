@@ -1,5 +1,5 @@
 export function Marquee() {
-  const text = "HARD TECHNO • INDUSTRIAL • MADRID • 150 BPM+ • HARDBRUTALITY • ";
+  const text = "8 SOLDS OUT IN A ROW • MADRID • HARDBRUTALITY • SALA COCO • ";
   
   // Create content that repeats enough times to fill screen
   const repeatedContent = [...Array(20)].map((_, i) => (
