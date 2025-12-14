@@ -2,9 +2,9 @@ import { useState } from "react";
 import { X, Play, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import djMixxi from "@/assets/dj-mixxi.jpg";
-import djRods from "@/assets/dj-rods.jpg";
+import djRods from "@/assets/dj-rods-new.jpg";
 import djSame from "@/assets/dj-same.jpg";
-import djKoni from "@/assets/dj-koni.jpg";
+import djKoni from "@/assets/dj-koni.png";
 
 interface DJ {
   name: string;
@@ -48,9 +48,9 @@ const residents: DJ[] = [
     name: "KØNI",
     image: djKoni,
     role: "RESIDENT DJ",
-    shortBio: "Acid-driven techno meets industrial rage. Pure adrenaline.",
-    fullBio: "KØNI canaliza la rabia industrial a través de líneas ácidas devastadoras. Su techno cargado de adrenalina es un viaje sin retorno a través de los sonidos más agresivos de la escena. Cada set es una experiencia visceral que deja huella en quien lo vive.",
-    genres: ["Acid", "Hardtechno", "Industrial Rage"],
+    shortBio: "Artista camaleónica y residente de Hard Brutality. Energía pura.",
+    fullBio: "Artista camaleónica y residente de Hard Brutality. Koni tiene la misión de transmitir una vibra que prohíbe quedarse quieto. Su fuerte es el Hardbounce con ritmos rápidos y animados, aunque domina el terreno del Hardgroove, Hardance e incluso el Schranz. Ha llevado su energía a cabinas icónicas como Code By Fabrik, The Bassement, Avalon y Nitro.",
+    genres: ["Hardbounce", "Hardgroove", "Hardance", "Schranz"],
     musicUrl: "https://on.soundcloud.com/w6exOB1YyUYJ5OP5sC",
   },
 ];
