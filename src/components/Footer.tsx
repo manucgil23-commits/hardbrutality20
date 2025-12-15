@@ -75,7 +75,7 @@ export function Footer() {
 
           {/* Tagline */}
           <p className="font-mono text-xs text-laser tracking-widest">
-            MADRID HARD GROOVE CULTURE
+            MADRID TECHNO CULTURE
           </p>
         </div>
       </div>

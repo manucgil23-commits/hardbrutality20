@@ -32,7 +32,7 @@ const residents: DJ[] = [
     image: djRods,
     role: "RESIDENT DJ",
     shortBio: "Hardgroove hipnótico y contundente desde Madrid.",
-    fullBio: "DJ y productor madrileño con seis años de trayectoria. Rods canaliza una energía arrolladora, centrando su sonido en un Hardgroove hipnótico y contundente de puro baile. Su técnica depurada ha conquistado las cabinas más exigentes, destacando sus actuaciones en Code by Fabrik, The Bassment, Sala Groove y Jowke.",
+    fullBio: "DJ y productor madrileño con seis años de trayectoria. Rods canaliza una energía arrolladora, centrando su sonido en un Hardgroove hipnótico y contundente de puro baile. Su técnica depurada ha conquistado las cabinas más exigentes, destacando sus actuaciones en Code by Fabrik, The Bassment, Sala Groove, Jowke y Sala Coco.",
     genres: ["Techno", "Hard Groove", "Raw", "Hypnotic Techno"],
     musicUrl: "https://on.soundcloud.com/wpYUMdUmuyLoVPKDfC",
   },
