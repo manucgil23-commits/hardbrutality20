@@ -119,7 +119,7 @@ export function VipListSection() {
           {/* Stats/Social Proof */}
           <div className="flex justify-center gap-8 mt-12 pt-8 border-t border-border/30">
             <div className="text-center">
-              <div className="font-display text-3xl md:text-4xl text-foreground">500+</div>
+              <div className="font-display text-3xl md:text-4xl text-foreground">+7K</div>
               <div className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Members</div>
             </div>
             <div className="w-px bg-border/30" />
